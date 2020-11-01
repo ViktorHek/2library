@@ -10,8 +10,23 @@ describe Visitors do
     end
 
     it 'can borrow book' do
-        expected_output = { :item => 0, :title => 'Trollkarlens hatt', :author => 'Tove Jansson', :available => false, :return_date => '2020/12/1' }
+        expected_output = { :item => 0, :title => 'Trollkarlens hatt', :author => 'Tove Jansson', :available => false, :return_date => Date.today >> 1 }
         expect(subject.borrow_book).to eq expected_output
+    end
+
+    it 'can return book' do
+        expected_output = { :item => 0, :title => 'Trollkarlens hatt', :author => 'Tove Jansson', :available => true, :return_date => nil }
+        expect(subject.return_book).to eq expected_output
+    end
+
+    it 'show list off books that\'s available' do
+        expected_output = "#{:title} is available"
+        expect(subject.show_available_books).to be expected_output
+    end
+
+    it 'show list off books that\'s not available' do
+        expected_output = "#{:title} is available"
+        expect(subject.show_available_books).to expected_output
     end
 
     # it 'can\'t check out a book that isn\'t available' do
@@ -25,3 +40,11 @@ describe Visitors do
     #     expect(subject.check_out_book(true, '31/11')).to eq expected_output
     # end
 end
+
+
+
+
+    # it 'show return-date when book is borrowed' do
+    #     expected_output = [:available] == false ? return [:return_date] => Date.today >> 1 }
+    #     expect(subject.show_return_date).to eq expected_output
+    # end

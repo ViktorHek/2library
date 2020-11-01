@@ -1,16 +1,16 @@
 ---
-- :item:
-    :title: Trollkarlens hatt
-    :author: Tove Jansson
+- :item: 0
+  :title: Trollkarlens hatt
+  :author: Tove Jansson
   :available: true
-  :return_date: 2020-11-31
-- :item:
-    :title: Farlig midsommar
-    :author: Tove Jansson
-  :available: false
-  :return_date: 2020-11-31
-- :item:
-    :title: Trollvinter
-    :author: Tove Jansson
+  :return_date:
+- :item: 1
+  :title: Farlig midsommar
+  :author: Tove Jansson
   :available: true
-  :return_date: 
+  :return_date:
+- :item: 2
+  :title: Trollvinter
+  :author: Tove Jansson
+  :available: true
+  :return_date:
