@@ -1,52 +1,40 @@
-## Library Challenge
-### Week 1 Ruby challenge
+# Library Challenge
 
-Instructions
--------
-Read this entire README carefully and follow all instructions.
+## the mission
+“We need an app where both the visitors and the library can see if a list of books is available, it would be nice to see both the title and the author of the book. The library needs to store these books in a file where we can easily check if a book is available or not. The library also needs the visitors to check out books after finding the title they want. Depending on the time of the checkout the library needs the books to be returned within a month and obviously, it would be nice for the visitor to know which date to return the book.”
 
-* Challenge time: this weekend, until Monday 9am
-* Feel free to use Google, Stack Overflow, your notes, previously written code, books, etc. but work on your own
-* If you refer to or have in whole or partially used the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution to GitHub and create a Pull Request**
-* You must submit a Pull Request to this repository with your code by 9.30am Monday morning - before the stand-up
+## what it do
+this i a library. we have a selection och three books. all by the same author, Tove Jansson, because you really don't need anybody else. in this library you have the ability to borrow a book which will give you information about the title, author, return-date but unfortunately not the actual book. you will also have the ability to return the book which will give you the same information but of course without the return-date.
 
+## it's easy
 
-### Tasks
-----
+1. go to irb
+2. require 'yaml'
 
-* Fork the challenge repo: https://github.com/CraftAcademy/library-challenge
-* Run the command `bundle install` in the project directory to ensure you have all the gems
-* Write your specs and implementation
-* Be smart about using Git: commit and push often. Use feature branches.
-* Create a Pull Request as soon as possible
-* Read the comments from Hound and fix any issues that the service points out.
+*if you are a visitor*
 
-### Tips
-----
+3. load './lib/visitor.rb'
+4. 'your name' = Visitor.new
+the books have a number between 1 - 3. you pick a book by choosing between
+5. 'your name'.borrow_book1, 'your name'.borrow_book2 or 'your name'.borrow_book3
+and you return the book with the same number
+6. 'your name'.return_book1, 'your name'.return_book2 or 'your name'.return_book3
 
-##### Some hints:
-  * A Person needs to have a list of books that he currently has in his possession. That list needs to include the return date.
-  * The return date can be calculated using the `Date` object. Out of the box, there are methods you can use to add days to the current date.
-  * Make use of `doubles` when writing your specs
-  * Follow the [naming conventions/standards](https://craftacademy.gitbooks.io/coding-as-a-craft/content/extras/naming_standards.html) for methods and variables
+*if you are a librarian you ignore step 3-6 and type*
 
-### What we are looking for
-----
-##### I'm hoping to see that:
-* You can take a problem set and write a well tested implementation on your own.
-* You understand how to define Ruby Classes and work with objects.
-* You understand how classes can interact with each other.
-* You know how to make use of arrays, hashes, and associated methods to create dynamic lists.
-* You know how to write specs and use them as a blueprint in your development.
-* I can track your work by following you commit history - so please commit as soon you are done with a feature or when you have made a test pass.
+7. load './lib/library.rb'
+8. 'your name' = Library.new
+9. to check what's available you type 'your name'.is_available?
+10. to search for a book you type 'your name'.search_title('the title')
 
-##### In your Pull Request, I'm hoping to see:
-* That you are testing the right thing in the right spec file.
-* That all tests passing - green is good!
-* High test coverage (above 95% is accepted)
-* The code is easy to follow: every class has a clear responsibility, methods are short, code is nicely formatted, etc.
-* The `README.md` includes information on how to use your solution with command examples in `irb`. (Feel free to remove this text)
+## Dependencies
 
+* Ruby
+* YAML
+* VS Code 
+* Pry
+* Rspec
+* The Terminal
 
-**Happy coding!**
+### shout-out
+Sara Lundkvist

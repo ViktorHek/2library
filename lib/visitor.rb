@@ -9,6 +9,10 @@ class Visitors
         @library = YAML.load_file('./lib/library.yaml')
     end
 
+    def is_available?
+        library.select { |obj| obj[:available] == true }
+    end
+
     def borrow_book1
         library[0][:available] = false
         library[0][:return_date] = Date.today >> 1
