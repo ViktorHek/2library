@@ -4,6 +4,8 @@ require 'yaml'
 class Library
 attr_accessor :library, :exp_date
 
-def initialize
-    @library = YAML.load_file('./lib/library.yaml')
+    def initialize
+        @library = YAML.load_file('./lib/library.yaml')
+    end
+
 end

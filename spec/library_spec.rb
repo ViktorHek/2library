@@ -1,4 +1,4 @@
-
+require 'date'
 require './lib/visitor.rb'
 
 describe Visitors do 
@@ -9,6 +9,10 @@ describe Visitors do
         expect(subject.library).to eq expected_output
     end
 
+    it 'can borrow book' do
+        expected_output = { :item => 0, :title => 'Trollkarlens hatt', :author => 'Tove Jansson', :available => false, :return_date => '2020/12/1' }
+        expect(subject.borrow_book).to eq expected_output
+    end
 
     # it 'can\'t check out a book that isn\'t available' do
     #     allow(book).to receive(:available).and_return(false)
